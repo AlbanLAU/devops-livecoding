@@ -49,6 +49,6 @@ jobs:
       - name: Build and push httpd image
         uses: docker/build-push-action@v3
         with:
-          context: ./httpd # Adjust to the actual httpd Dockerfile location
+          context: ./http-server # Adjust to the actual http-server Dockerfile location
           tags: ${{ secrets.DOCKER_USERNAME }}/tp-devops-httpd:latest
           push: ${{ github.ref == 'refs/heads/main' }}
