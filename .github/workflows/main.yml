@@ -57,7 +57,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: ./devops-front-main # Adjust to the actual front Dockerfile location
-          tags: ${{ secrets.DOCKER_USERNAME }}/tp-devops-httpd:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/tp-devops-front:latest
           push: ${{ github.ref == 'refs/heads/main' }}
 
 

@@ -10,4 +10,3 @@
       - name: my_network
     state: started
     restart_policy: always
-
