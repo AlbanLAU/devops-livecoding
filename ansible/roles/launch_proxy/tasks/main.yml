@@ -5,7 +5,7 @@
     name: http-server
     image: albanlau/tp-devops-httpd
     ports:
-      - "3000:3000"
+      - "80:80"
     networks:
       - name: my_network
     state: started
