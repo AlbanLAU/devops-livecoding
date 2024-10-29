@@ -20,12 +20,7 @@ jobs:
 
       - name: Build, Test, and SonarCloud Analysis
         working-directory: simple-api
-        run: mvn -B verify sonar:sonar \
-          -Dsonar.projectKey=AlbanLAU_devops-livecoding \
-          -Dsonar.organization=albanlau \
-          -Dsonar.host.url=https://sonarcloud.io \
-          -Dsonar.login=${{ secrets.SONAR_TOKEN }} \
-          --file ./simple-api/pom.xml
+        run: mvn -B verify sonar:sonar -Dsonar.projectKey=AlbanLAU_devops-livecoding -Dsonar.organization=albanlau -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${{ secrets.SONAR_TOKEN }}  --file ./simple-api/pom.xml
 
   build-and-push-docker-image:
     needs: test-backend
