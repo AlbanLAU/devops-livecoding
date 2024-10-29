@@ -1,0 +1,13 @@
+---
+# tasks file for roles/launch_app
+- name: Launch Application
+  docker_container:
+    name: my-api
+    image: albanlau/tp-devops-simple-api
+    env:
+      DATABASE_URL: "mysql://your_user:your_password@mysql_db:3306/your_database"
+    networks:
+      - name: my_network
+    state: started
+    restart_policy: always
+

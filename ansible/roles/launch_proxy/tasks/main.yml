@@ -1,0 +1,12 @@
+---
+# tasks file for roles/launch_proxy
+- name: Launch Proxy
+  docker_container:
+    name: http-server
+    image: albanlau/tp-devops-httpd
+    ports:
+      - "3000:3000"
+    networks:
+      - name: my_network
+    state: started
+    restart_policy: always
