@@ -1,0 +1,15 @@
+---
+# tasks file for roles/launch_front
+- name: Launch Front
+  docker_container:
+    name: my-front
+    image: albanlau/tp-devops-database
+    env:
+      MYSQL_ROOT_PASSWORD: "your_root_password"
+      MYSQL_DATABASE: "your_database"
+      MYSQL_USER: "your_user"
+      MYSQL_PASSWORD: "your_password"
+    networks:
+      - name: my_network
+    state: started
+    restart_policy: always

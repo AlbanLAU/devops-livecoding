@@ -52,3 +52,12 @@ jobs:
           context: ./http-server # Adjust to the actual http-server Dockerfile location
           tags: ${{ secrets.DOCKER_USERNAME }}/tp-devops-httpd:latest
           push: ${{ github.ref == 'refs/heads/main' }}
+
+      - name: Build and push front image
+        uses: docker/build-push-action@v3
+        with:
+          context: ./devops-front-main # Adjust to the actual front Dockerfile location
+          tags: ${{ secrets.DOCKER_USERNAME }}/tp-devops-httpd:latest
+          push: ${{ github.ref == 'refs/heads/main' }}
+
+
