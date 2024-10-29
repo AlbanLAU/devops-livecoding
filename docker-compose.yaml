@@ -20,6 +20,8 @@ services:
   front:
     build: ./devops-front-main
     container_name: my-front
+    ports:
+      - "90:90"
     networks:
       - my-network
     depends_on:

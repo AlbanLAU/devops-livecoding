@@ -4,6 +4,8 @@
   docker_container:
     name: my-front
     image: albanlau/tp-devops-front
+    ports:
+      - "90:90"
     networks:
       - name: my_network
     state: started
